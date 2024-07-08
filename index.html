@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unveiling the stories & significance of historic landmarks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header .left,
+        .header .right {
+            display: flex;
+            align-items: center;
+        }
+
+        .menu-icon {
+            font-size: 22px;
+            cursor: pointer;
+            margin-right: 18px;
+        }
+
+        .header .center h1 {
+            margin: 0;
+            font-size: 25px;
+        }
+
+        .header .right .subscribe {
+            font-size: 17px;
+            text-decoration: none;
+            color: black;
+            margin-left: 21px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            background-color: #f8f8f8;
+            padding: 12px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .navbar a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+            font-size: 13px;
+        }
+
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-article{
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+        }
+
+        .main-article img{
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .main-article-content{
+            padding: 20px;
+        }
+        .related-articles p{
+            margin: 0;
+        }
+
+        .related-articles span{
+            display: block;
+            color: #777;
+            margin-bottom: 10px;
+        }
+
+        .news-item{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+            background-color: #0e0202;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .news-item div{
+            flex-grow: 1;
+        }
+
+        
+
+        .article-header {
+            margin-bottom: 20px;
+        }
+
+
+
+        .article-header h2 {
+            font-size: 36px;
+            margin: 0;
+        }
+
+        .article-header p {
+            color: gray;
+            margin: 0;
+            display: inline-block;
+        }
+
+        .article-image {
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .author-date {
+            margin-top: 10px;
+            color: #555;
+            font-style: italic;
+        }
+
+        .additional-articles {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .article {
+            width: 32%;
+        }
+
+        .article img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+           
+        }
+
+        .article h3 {
+            font-size: 24px;
+            margin: 10px 0 5px 0;
+        }
+
+        .article p {
+            color: gray;
+            margin: 5px 0;
+        }
+
+        .article p span{
+            font-size: 8px;
+            text-transform: italic;
+            font-weight: bold;
+        }
+
+        .article .author {
+            margin-top: 10px;
+            color: #555;
+            font-style: italic;
+        }
+        .footer-bottom{
+            text-align: center;
+            margin-top: 2rem;
+            border-top: 1px solid #444;
+        }
+        .footer-bottom p{
+            margin: 0;
+        }
+        .footer-column.social-media button{
+            background-color: #fff;
+            color: #121111;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+        }
+        .footer-column.social-media a{
+            color: #fff;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 1 rem;
+        }
+
+        .footer-column.social-media ul li a img{
+            width: 24px;
+            height: 24px;
+        }
+        .footer-column.social-media ul li{
+            list-style: none;
+        }
+        .footer-column.social-media ul{
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        .footer-column ul li a{
+            text-decoration: none;
+            color: #fff;
+        }
+        footer-column ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer{
+            background-color: #0e0202;
+            color: #0a0202;
+            padding: 2rem 1rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        .footer-container{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px 1fr));
+            gap: 2rem;
+        }
+        .footer-column{
+            display: flex;
+            flex-direction: column;
+        }
+        .footer-column h3{
+            margin-bottom: 1rem;
+        }
+        .footer-column h3{
+            margin-bottom: 1 rem;
+        }
+        .footer-column ul{
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="left">
+            <div class="menu-icon">&#9776;</div>
+        </div>
+        <div class="center">
+            <h1>JOURNAX</h1>
+        </div>
+        <div class="right">
+            <a href="#" class="subscribe">Subscribe</a>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <a href="#">Health</a>
+        <a href="#">Politics</a>
+        <a href="#">Sports</a>
+        <a href="#">World News</a>
+        <a href="#">Business</a>
+        <a href="#">Technology</a>
+        <a href="#">Cart (0)</a>
+    </nav>
+    <main>
+    <div class="container">
+        <div class="content">
+            <div class="article-header">
+                <h2>Unveiling the stories & significance of historic landmarks</h2>
+                <p>Discover the rich heritage, architectural marvels, and pivotal events that have shaped these iconic sites. Through our in-depth coverage, gain a deeper appreciation for the legacy.</p>
+                <p class="author-date">Marvin McKinney &mdash; June 29, 2024</p>
+            </div>
+            <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb0b7962fe6b39d24c427_news-main-13.jpg" alt="Historic landmark" class="article-image">
+        </div>
+
+        <div class="additional-articles">
+            <div class="article">
+                <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb0e29ed33b549f7d769c_news-thumb-14.jpg" alt="Next-gen sports stars">
+                <h4>The rise of next-gen sports stars</h4>
+                <p>From breakthrough performances to inspiring stories, we spotlight the next generation of athletes making waves in the sports world.</p>
+                <p class="author"><span>Leslie Alexander</span></p>
+            </div>
+            <div class="article">
+                <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb1252d8c203c005b88fe_news-thumb-15.jpg" alt="Electric vehicle technology">
+                <h4>Advancements in electric vehicle technology</h4>
+                <p>Explore the latest innovations shaping the future of electric vehicles. From cutting-edge battery technologies to advancements in autonomous driving.</p>
+                <p class="author"><span>Wade Warren</span></p>
+            </div>
+            <div class="article">
+                <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb15df0b53dd34be6a682_news-thumb-16.jpg" alt="AI startup acquisition">
+                <h4>Tech giant acquires AI startup for $2 billion</h4>
+                <p>Acquired an AI startup for $2 billion, aiming to enhance its technological capabilities and expand its influence in the artificial intelligence sector.</p>
+                <p class="author"><span>Theresa Webb</span></p>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <article class="extended-contents">
+        <section class="editor-picks">
+            <h2>Editor's picks </h2>
+            <div class="grid">
+                <div class="large item">
+                    <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667fa6660746e795774eb436_editor-news-01.jpg" alt="">
+                    <p>International community expresses hope for resolution</p>
+                    <span>World News</span>
+                </div>
+                <div class="large item">
+                    <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667fa71e7dde9e3d024847d7_editor-news-02.jpg" alt="">
+                    <p>Season's most dramatic races</p>
+                    <span>Sports</span>
+                </div>
+                <div class="large item">
+                    <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667fa762dba43638cc6ed29d_editor-news-03.jpg" alt="">
+                    <p>Innovations driving the future of transportation</p>
+                    <span>Technology</span>
+                </div>
+                <div class="large item">
+                    <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667fa7b9c213d85ea6857b50_editor-news-04.jpg" alt="">
+                    <p>Supply chain disruptions challenges and solutions for businesses worldwide</p>
+                    <span>Business</span>
+                </div>
+            </div>
+        </section>
+        <section class="feature">
+            <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb128538b017fc4bfc5d0_news-main-15.jpg" alt="">
+            <div class="feature-content">
+                <h3>Advancements in electric vehicle technology</h3>
+                <p>Explore the latest innovations shaping the future of electric vehicles.
+                    From cutting-edge battery technologies to advancements in
+                    autonomous driving.</p>
+                    <p><strong>June 29, 2024</strong> - Wade Warren</p>
+            </div>
+        </section>
+        <section class="world-news">
+            <h2>World News</h2>
+            <div class="news-item">
+                <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667d352670fefb0f3ab47c18_news-main-02.jpg" alt="">
+                <h3>UN report highlights growing threat of food insecurity
+                    in developing nations</h3>
+                <p>A recent United Nations report has brought attention to the escalating issue
+                    of food insecurity in developing nations. The report highlights how
+                    economic instability, climate change, and ongoing conflicts are
+                    exacerbating hunger and malnutrition, putting millions at risk.</p>
+                <div class="author-info">
+                    <p>Leslie Alexander</p>
+                    <span>Editorialist</span>
+                </div>    
+            </div>
+        </section>
+        <section class="main-article">
+            <img src="https://cdn.prod.website-files.com/667bd81876339d31af9381fa/667eb3aba694ed3ca5f4b3d4_news-thumb-27-p-500.jpg" alt="">
+            <div class="main-article-content">
+                <h2>Global leaders convene to discuss new trade agreements, aim to strengthen economic cooperation</h2>
+                <p>By forging stronger economic ties, the participating nations hope to stimulate trade, create jobs, and promote sustainable development in an increasingly interconnected world.</p>
+                <span>June 28, 2024 -- Guy Hawkins</span>
+            </div>
+            <div class="related-articles">
+                <p>Us presidential administration Biden's first year in office</p>
+                <span>June 27, 2024 -- Kristin Watson</span>
+            </div>
+        </section>
+    </article>
+</main>
+<footer>
+    <div class="footer-container">
+        <div class="footer-column">
+            <h3>Pages</h3>
+            <ul>
+                <li><a href="#">About us</a></li>
+                <li><a href="#">News</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Newsletter Plans</a></li>
+                <li><a href="#">Contact us</a></li>
+                <li><a href="#">SignUp</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Category</h3>
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#">Politics</a></li>
+                <li><a href="#">Sports</a></li>
+                <li><a href="#">World News</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">Technology</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#"></a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Advertise</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">License</a></li>
+                <li><a href="#">Style Guide</a></li>
+            </ul>
+        </div>
+        <div class="footer-column social-media">
+            <ul>
+                <li><a href="#"><img src="https://cdn.prod.website-files.com/660fedec1ab54b2595c51e30/667bf5583abb512561a7491f_twitter.svg" alt="Twitter"></a></li>
+                <li><a href="#"><img src="https://cdn.prod.website-files.com/660fedec1ab54b2595c51e30/667bf5582f13cecb632bbc6d_facebook.svg" alt="Facebook"></a></li>
+                <li><a href="#"><img src="https://cdn.prod.website-files.com/660fedec1ab54b2595c51e30/667bf558a0ec13a71e3726bb_youtube.svg" alt="Youtube"></a></li>
+                <li><a href="#"><img src="https://cdn.prod.website-files.com/660fedec1ab54b2595c51e30/667bf558af35084887f29158_instra.svg" alt="Instagram"></a></li>
+                <li><a href="#"><img src="https://cdn.prod.website-files.com/660fedec1ab54b2595c51e30/667bf558e21b601f206b5dc2_rss.svg" alt="RSS"></a></li>
+            </ul>
+            <a href="mailto:info@example.com">info@example.com</a>
+            <button>Advertise with us</button>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2024 Journax. Designed by Nixar. Powered by Webflow.</p>
+    </div>
+</footer>
+</body>
+</html>
